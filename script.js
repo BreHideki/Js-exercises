@@ -1,24 +1,31 @@
-let numberOne = Number(prompt("Insira o primeiro número"));
 
-let numberTwo = Number(prompt("Insira o segundo número"));
+const studentsList = [
+    {
+        name: "John Doe",
+        firstGrade: 9,
+        secondGrade: 10
+    },
+    {
+        name: "Jane Smith",
+        firstGrade: 8,
+        secondGrade: 7
+    },
+    {
+        name: "Tom Brown",
+        firstGrade: 6,
+        secondGrade: 4
+    }
+]
+let average;
+let isApproved;
 
-let sum = numberOne + numberTwo
-let sub = numberOne - numberTwo
-let mult = numberOne * numberTwo
-let div = numberOne / numberTwo
-let rest = numberOne % numberTwo
-
-let even = sum % 2;
+function averageCalculator(n1, n2) {
+  average = (n1 + n2) / 2;
+  isApproved = average >= 7 ? " Parabéns, você foi aprovado!" : " Continue estudando para recurar a nota"
+  return average + isApproved;
+}
 
 
-alert(`A soma dos dois números é: ${sum}`)
-alert(`A subtração dos dois números: ${sub}`)
-alert(`A multiplicação dos dois números: ${mult}`)
-alert(`A divisão dos dois números: ${div}`)
-alert(`O resto da divisão dos dois número: ${rest}`)
-
-const isEven = even == 0 ? "Par" : "ímpar";
-alert(isEven);
-
-const same = numberOne == numberTwo ? "Você inseriu os mesmos números" : "Você inseriu números diferentes"
-alert(same)
+for(student of studentsList) {
+    alert(`${student.name} sua média é ${averageCalculator(student.firstGrade, student.secondGrade)}`)
+}
